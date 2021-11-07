@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+</head>
+<style>
+    .pool {
+        position: relative;
+    }
+
+    .water {
+        background-color: powderblue;
+        width: 100%;
+        height: 500px;
+        margin-top: 100px;
+        position: absolute;
+    }
+
+    .dophin {
+        position: absolute;
+        width: 180px;
+        height: 250px;
+        background-image: url(dophin.png);
+        margin-top: 50px;
+        background-size: cover;
+        animation: swim 5s infinite linear;
+    }
+
+    @keyframes swim {
+        0% {
+            left: 0px;
+            top: 0px;
+        }
+
+        25% {
+            left: 0px;
+            top: 10px;
+        }
+
+        50% {
+            left: 10px;
+            top: 0px;
+        }
+
+        75% {
+            left: 0px;
+            top: 10px;
+        }
+
+        100% {
+            left: 0px;
+            top: 0px;
+        }
+
+    }
+
+    .wave {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        top: -50px;
+        /* background-color: lightskyblue; */
+    }
+
+</style>
+
+<body>
+    <div class="pool">
+        <div class="water"></div>
+        <div class="dophin"></div>
+        <div class="wave">
+            <!-- <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,92.27 C216.83,192.92 304.30,8.39 500.00,109.03 L500.00,0.00 L0.00,0.00 Z" style="stroke: none;fill: #e1efe3;"></path>
+              </svg> -->
+        </div>
+    </div>
+</body>
+
+</html>
