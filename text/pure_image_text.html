@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS & JS -->
+    <!-- <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+    <style>
+        body {
+            width: auto;
+            height: 2000px;
+            background-image: linear-gradient(to top, rgba(234, 113, 217, 0.5) 0%, rgba(199, 113, 243, 0.8) 100%);
+            background-size: cover;
+            /*background full screen*/
+            position: relative;
+        }
+
+        body .text_container {
+            position: absolute;
+            /* center the screen */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 500px;
+
+        }
+
+        body .text_container h1 {
+            font-size: 150px;
+             /* mix-blend-mode: screen;  */
+            background: url('galaxy.jpg');
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+        }
+
+        /* .video_container {
+            pointer-events: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- video background 
+    <div class="video_container">
+         <video width="100%" autoplay="" muted="" loop="" controls="false">
+            <source src="https://hlpos.com/images/video/home-video.mp4" type="video/mp4">
+        </video>
+    </div>-->
+
+    <div class="text_container">
+        <h1>Hey My Baby!</h1>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+body {
+    width: auto;
+    min-height: 100%;
+    background-image: linear-gradient(to right, rgba(234, 113, 217, 0.4) 0%, rgba(199, 113, 243, 1) 100%);
+    background-size: cover;
+    /*background full screen*/
+    position: relative;
+}
+
+.div1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    
+
+}
+
+/* .div1.text_container {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+} */
+
+.div1.text_container h1 {
+    font-size: 80px;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
+     /* mix-blend-mode: screen;  */
+    /* background: url('galaxy.jpg');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  */
+    animation-name: div1Animation;
+    animation-duration: 15s;
+}
+
+@keyframes div1Animation {
+    from {
+    background: url('galaxy.jpg');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    to {
+    background: url('galaxy2.jpg');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+}
