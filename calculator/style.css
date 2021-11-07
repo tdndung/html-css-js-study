@@ -1,0 +1,117 @@
+/* body {
+    background-color: rgb(142 142 143 / 26%);
+    background-image: url(bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: contain;
+} */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calculator {
+    max-width: 550px;
+    background-color: azure;
+    border-radius: 32px;
+    -webkit-box-shadow: 14px 23px 29px -9px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 14px 23px 29px -9px rgba(0, 0, 0, 0.39);
+    box-shadow: 14px 23px 29px -9px rgba(0, 0, 0, 0.39);
+}
+
+.output {
+    background: #5f9ea07d;
+    border-radius: 16px;
+    margin: 0 16px;
+    color: #fff;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #505050;
+    text-shadow: 3px 3px 2px #00000057;
+    min-height: 166px;
+}
+
+.history {
+    font-size: 40px;
+}
+
+.result {
+    font-size: 60px;
+    text-align: right;
+    overflow: hidden;
+}
+
+button {
+    height: 88px;
+    width: 88px;
+    margin-top: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 40px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 7px #1a1a1a;
+}
+button:focus {
+    outline: 0;
+}
+
+.operator>button.plus {
+    background: antiquewhite;
+}
+
+.operator>button.minus {
+    background: bisque;
+}
+
+.operator>button.multiple {
+    background: burlywood;
+}
+
+.operator>button.divide {
+    background: chocolate;
+}
+.remove {
+    background-color: cadetblue;
+    color: #fff;
+}
+.enter {
+    width: 350px;
+    height: 50px;
+    border-radius: 12px;
+    background: dimgrey;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 14px 9px 27px -7px rgba(0, 0, 0, 0.39);
+    text-shadow: 3px 3px 2px #3535467d;
+    font-family: 'Rowdies', cursive;
+    letter-spacing: 4px;
+}
+.bee {
+    top: 0;
+    left: 250px;
+    width: 150px;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes example {
+    0%   {top:0px}
+    25%  {top:12px}
+    50%  {top:0px}
+    75%  {top:12px}
+    100% {top:0px}
+  }
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+  }
