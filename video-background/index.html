@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgb(69, 6, 99);
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgba(159, 52, 221, 0.397);
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(159, 52, 221, 0.747);
+        }
+
+        .part1 {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .img-background {
+            background: linear-gradient(to right, #6517909e, #000c80ad), url(img1.jpg);
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: zoomin 20s ease-in infinite;
+            overflow: hidden;
+            will-change: scale;
+        }
+
+        /* .part1:after {
+            content: "";
+            height: 360px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(to top, #fff 0%, #fff 35%, rgba(255, 255, 255, 0) 100%);
+        } */
+
+        @keyframes zoomin {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .menu-bar {
+            font-size: 24px;
+            color: white;
+            position: absolute;
+            top: 5%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+        }
+
+        .menu-bar :first-child {
+            margin-right: 200px;
+        }
+
+        .logo {
+            filter: invert(1);
+            height: 70px;
+        }
+
+        .section {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 0.7;
+            display: flex;
+            align-items: center;
+        }
+
+        .section p {
+            font-weight: 900;
+            transform: translateY(-50%);
+            font-size: 8vw;
+        }
+
+        .section .p2 {
+            font-size: 2vw;
+        }
+
+        .slider {}
+
+        .slider img {
+            min-height: 600px;
+            min-width: 400px;
+            border-radius: 16px;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .icon {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+
+        .icon:hover {
+            font-size: 62px;
+        }
+
+        /* Part 2 */
+        .part2 {
+            padding: 120px 0;
+        }
+
+        .info1 .text div {
+            position: relative;
+        }
+
+        .info1 .text div::after {
+            content: "";
+            width: 70px;
+            height: 100%;
+            top: 0;
+            right: 100%;
+            background-color: #fff;
+            position: absolute;
+            box-shadow: -35.355px 35.355px 50px 0px rgba(157, 157, 157, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="part1">
+        <div class="img-background">
+        </div>
+        <li class="d-flex menu-bar">
+
+            <ul><img class="img-responsive logo mr-auto" src="logo.png"></ul>
+            <ul>HOME</ul>
+            <ul>ABOUT</ul>
+            <ul>SERVICE</ul>
+            <ul>PACKAGE</ul>
+            <ul>CONTACT</ul>
+            <ul>SEARCH</ul>
+        </li>
+
+        <div class="section container">
+            <div class="col-6">
+                <p>TOKYO</p>
+                <p class="p2">... not so far away</p>
+            </div>
+
+            <div class="col-5 col-offset-1">
+                <div class='slider'>
+                    <div class="slide"> <img class="img-thumbnail" src="TokyoTower.jpg"> </div>
+                    <div class="slide"> <img class="img-thumbnail" src="street-food.jpg"> </div>
+                    <div class="slide"> <img class="img-thumbnail" src="kimono.jpg"> </div>
+                </div>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="icon"><i class="fa fa-angle-double-down" style="font-size:48px;color:#fff"></i></div>
+    </div>
+
+
+    <div class="part2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center">
+                    <h1>Why Choose Us Your Fitness Builder</h1>
+                    <p class="text-secondary" style="font-size: 14px;">Who are in extremely love with eco friendly
+                        system.</p>
+                </div>
+            </div>
+            <div class="row info1">
+                <div class="col-md-6" style="margin-top: 120px;z-index: 2;">
+                    <div>
+                        <img class="" src="about-img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 text">
+                    <div
+                        style="box-shadow: 0px 0px 50px 0px rgba(157, 157, 157, 0.3); background: #fff;padding: 80px 100px 80px 40px;">
+
+                        <h2 class="pb-4">We Realize that <br> there are reduced <br> Wastege Stand out</h2>
+                        <p class="pb-3 text-secondary" style="font-weight: 14px;font-weight: 300;"> inappropriate
+                            behavior is often laughed off as “boys will be boys,” women face
+                            higher conduct standards – especially in the workplace. That’s why it’s crucial that, as
+                            women. </p>
+                        <p class="pb-3 text-secondary" style="font-weight: 14px;font-weight: 300;">inappropriate
+                            behavior is often laughed off as “boys will be boys,” women face
+                            higher conduct standards – especially in the workplace. That’s why it’s crucial that, as
+                            women. inappropriate behavior is often laughed off as “boys will be boys,” women face higher
+                            conduct standards – especially in the workplace. That’s why it’s crucial that, as women.</p>
+                        <p class="pb-3 text-secondary" style="font-weight: 14px;font-weight: 300;">inappropriate
+                            behavior is often laughed off as “boys will be boys,” women face
+                            higher conduct standards – especially in the workplace. That’s why it’s crucial that, as
+                            women.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="part3" style="background-color: #f9f9ff;text-align: center;">
+        <div style="padding-top: 120px;">
+            <h1>Latest Project on the go</h1>
+            <p style="color: #777777;font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut <br />
+                labore et dolore magna aliqua.</p>
+        </div>
+        <img src="Tokyo.jpg" style="padding: 60px 0;" />
+        <div style="padding-bottom: 120px;">
+            <h6 class="text-uppercase" style="font-size: 16px; color:#222; font-weight: 600">Vector Illustration</h6>
+            <p style="color: #777777;font-size: 14px;">LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br /> allowed
+                humanity to create slimmer, more portable technology.</p>
+        </div>
+    </div>
+    <!-- http://preview.themeforest.net/item/traveltour-travel-booking-template-kit/full_screen_preview/26133788?_ga=2.25821434.67810031.1600186733-1160997717.1587822645 -->
+
+
+
+    <!-- jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- Bootstrap JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function currentSlide(activeSlide) {
+            // $('.slider div').removeClass('active');
+            // var slides = $(".slider :nth-child(" + activeSlide + ")");
+            // slides.addClass('active');
+            let slides = $(".slider :nth-child(" + activeSlide + ")");
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- https://demo.themewagon.com/preview/free-bootstrap-4-travel-website-template-download -->
+<!-- https://colorlib.com/preview/#taxa -->
