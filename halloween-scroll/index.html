@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap 4.5.2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="section-1">
+        <div style="overflow: hidden;height: 100%; width: 100vh;">
+            <img src="images/castle.png" id="castle"/>
+            <img src="images/wolf.png" id="wolf"/>
+            <img src="images/bats.png" id="bats"/>
+            <img src="images/img.png" id="img"/>
+        </div>
+
+    </section>
+    <section class="section-2">
+        <h1>Happy Halloween</h1>
+        <p>Yeah Spotlight, uh, moonlight, uh Nigga, why you trippin'? Get your mood right, uh Shawty look good in the
+            moonlight All these pussy niggas so bad mind Spotlight, moonlight Nigga, why you trippin'? Get your mood
+            right
+            Shawty look good in the moonlight All these pussy niggas so bad mind Spotlight, uh, moonlight, uh Nigga, why
+            you
+            trippin'? Get your mood right, uh Shawty look good in the moonlight All these pussy niggas so bad mind
+            Spotlight, moonlight Nigga, why you trippin'? Get your mood right Shawty look good in the moonlight All
+            these
+            pussy niggas so bad mind Feel like I'm destined I don't need no Smith & Wesson, no Boy, who you testin'?
+            Fuck a
+            Scantron, here's your lesson, oh Knife in intestine Takin' shots at all your bredrin, oh Feel like I'm
+            damaged
+            Girl, I know you fuckin' planned this All alone, call my phone, make me feel right Girl, you know when you
+            call,
+            make me feel right All alone, call my phone, make me feel right Girl, you know when you call, make me feel
+            right
+            Spotlight, uh, moonlight, uh Nigga, why you trippin'? Get your mood right, uh Shawty look good in the
+            moonlight
+            All these pussy niggas so bad mind Spotlight, moonlight Nigga, why you trippin'? Get your mood right Shawty
+            look
+            good in the moonlight All these pussy niggas so bad mind Spotlight, uh, moonlight, uh Nigga, why you
+            trippin'?
+            Get your mood right, uh Shawty look good in the moonlight All these pussy niggas so bad mind Spotlight,
+            moonlight Nigga, why you trippin'? Get your mood right Shawty look good in the moonlight All these pussy
+            niggas
+            so bad mind</p>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to("#img", {scrollTrigger: {scrub:0.5}, x:1500, y:500});
+        // gsap.to("#img", {
+        //     scrollTrigger: "#img",
+        //     x: 500
+        //     });
+    </script>
+    
+</body>
+
+</html>
