@@ -19,14 +19,12 @@
 
 <body>
     <section class="section-1">
-        <div style="overflow: hidden;height: 100%; width: 100vh;">
             <img src="images/castle.png" id="castle"/>
             <img src="images/wolf.png" id="wolf"/>
             <img src="images/bats.png" id="bats"/>
             <img src="images/img.png" id="img"/>
-        </div>
-
     </section>
+
     <section class="section-2">
         <h1>Happy Halloween</h1>
         <p>Yeah Spotlight, uh, moonlight, uh Nigga, why you trippin'? Get your mood right, uh Shawty look good in the
@@ -61,7 +59,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to("#img", {scrollTrigger: {scrub:0.5}, x:1500, y:500});
+        gsap.to("#img", {scrollTrigger: {scrub:3.5}, x:1500, y:500});
+        gsap.to("#bats", {scrollTrigger: {scrub:3.5}, scale: 1.5});
+        gsap.from("#wolf", {scrollTrigger: {scrub:3.5}, x:400});
+        gsap.from("#castle", {scrollTrigger: {scrub:3.5}, x:-100});
         // gsap.to("#img", {
         //     scrollTrigger: "#img",
         //     x: 500

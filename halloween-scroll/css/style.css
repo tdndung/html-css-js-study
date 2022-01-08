@@ -7,6 +7,7 @@ body {
     background-image: url("../images/background.jpg");
     background-size: cover;
     overflow: hidden;
+    position: relative;
 }
 
 .section-2::before {
@@ -42,5 +43,6 @@ h1 {
 p {
     padding: 100px 150px;
     line-height: 2em;
+    letter-spacing: 0.2rem;
     text-align: center;
 }

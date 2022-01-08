@@ -1,0 +1,92 @@
+body {
+    background-color: #B590CA; /* For browsers that do not support gradients */
+    background-image: linear-gradient(0deg, #B590CA, #5EE7DF);
+}
+
+.form-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    /* margin-top: 5%;
+    margin-bottom: 5%; */
+}
+.login-form-1{
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+.login-form-2{
+    padding: 5%;
+    background: #064951;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 {
+    color: #fff;
+}
+.login-form-2 h3{
+    text-align: center;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #064951;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+
+/* view image */
+.item{
+    left: 0;
+    top: 0;
+    position: relative;
+    overflow: hidden;
+    margin-top:50px;
+    
+}
+.item img{
+    -webkit-transition: 0.6s ease;
+      transition: 0.6s ease;
+      
+}
+.item img:hover{
+    -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+
+}
+.img-thumbnail{
+    border:0px;
+    border-radius:0px;
+}
