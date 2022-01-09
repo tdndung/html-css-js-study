@@ -1,6 +1,5 @@
 body {
-    background-color: #B590CA; /* For browsers that do not support gradients */
-    background-image: linear-gradient(0deg, #B590CA, #5EE7DF);
+    background-color: #0649512e;
 }
 
 .form-container {
