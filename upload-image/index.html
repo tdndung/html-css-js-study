@@ -46,7 +46,7 @@
                         </div>
                         <br />
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Đăng nhập"/>
+                            <input style="text-align: center" class="btnSubmit" id="btn-login" value="Đăng nhập"/>
                         </div>
 
                     </form>
@@ -61,6 +61,7 @@
         }
 
         $(document).ready(function() {
+            //Dang ky
             $('#btn-reg').on('click', function() {
                 var formData = new FormData();
                 formData.append('registerRequest', new Blob([JSON.stringify({
@@ -79,6 +80,26 @@
                         console.log(JSON.stringify(data));
                         var registerResponse = data;
                         localStorage.setItem('user_id', registerResponse.userResponse.id)
+                        redirectToHomePage()
+                    }
+                });
+            })
+
+            //Dang nhap
+            $('#btn-login').on('click', function() {
+                var formData = new FormData();
+
+                formData.append("key", $('#file-reg')[0].files[0])
+                $.ajax({
+                    url: 'http://localhost:8080/auth/login',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        console.log(JSON.stringify(data));
+                        var loginResponse = data;
+                        localStorage.setItem('user_id', loginResponse.id)
                         redirectToHomePage()
                     }
                 });
