@@ -36,7 +36,7 @@
                         <h5>Upload key để đăng nhập ngay !!!</h5>
                         <br />
                         <div class="form-group">
-                            <input type="file" class="upld-file">
+                            <input type="file" id="file-login" class="upld-file">
                         </div>
                         <br />
                         <div class="form-group">
@@ -51,7 +51,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function redirectToHomePage() {
-            window.location.href = 'viewImage.html';
+            setTimeout(function() {
+                window.location.href = 'viewImage.html';
+            }, 100)
         }
 
         $(document).ready(function() {
@@ -83,7 +85,7 @@
             $('#btn-login').on('click', function() {
                 var formData = new FormData();
 
-                formData.append("key", $('#file-reg')[0].files[0])
+                formData.append("key", $('#file-login')[0].files[0])
                 $.ajax({
                     url: 'http://localhost:8080/auth/login',
                     type: 'POST',
@@ -94,6 +96,7 @@
                         console.log(JSON.stringify(data));
                         var loginResponse = data;
                         localStorage.setItem('user_id', loginResponse.id)
+                        console.log(localStorage.getItem('user_id'))
                         redirectToHomePage()
                     }
                 });
