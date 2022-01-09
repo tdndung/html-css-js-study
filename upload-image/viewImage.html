@@ -19,20 +19,25 @@
                 <button id="uploadImage" type="button" class="upload-button">Tải ảnh lên</button>
             </form>
 
-            <table class="table table-striped mt-5">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">id</th>
-                    <th scope="col">file</th>
-                    <th scope="col">tải xuống</th>
-                  </tr>
-                </thead>
-                <tbody class="file-table">
-                    <!-- file here -->
-                </tbody>
-              </table>
+            <form class="download-image-form">
+                <table id="file-table" class="table table-striped mt-5">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">id</th>
+                        <th scope="col">file</th>
+                        <th scope="col" class="text-center">tải xuống</th>
+                    </tr>
+                    </thead>
+                    <tbody class="files">
+                        <!-- file here -->
+                    </tbody>
+                </table>
 
+                <div class="text-center">
+                    <button id="downloadImage" type="button" class="upload-button mt-5">Download ảnh đã chọn</button>
+                </div>
+            </form>
 
 
         </div>
@@ -42,7 +47,6 @@
 
     <script>
         function loadImages() {
-            
             $.ajax({
                 url: 'http://localhost:8080/images',
                 type: 'GET',
@@ -51,23 +55,21 @@
             }).done(function(result) {
                console.log(result);
                result.forEach((element, index) => {
-                    $('.file-table').append(`
+                    $('.files').append(`
                         <tr class="image-row">
                             <th scope="row">${index+1}</th>
                             <td>${element.id}</td>
                             <td>${element.originalFilename}</td>
-                            <td class="text-center"><input class="form-check-input" type="checkbox" value="" id="checked-${element.id}" checked></td>
+                            <td class="text-center">
+                                <input class="form-check-input" type="checkbox" value="${element.id}" id="checked-${element.id}" checked>
+                            </td>
                         </tr>
                         `);
                });
-            });;
+            });
         }
 
-        $(document).ready(function() {
-            // load images
-            loadImages();
-
-            // upload image
+        function uploadImages() {
             $("#uploadImage").on("click", function() {
                 var formData = new FormData($('form')[0]);
                 $.ajax({
@@ -89,6 +91,42 @@
                     }
                 });
             })
+        }
+
+        function getChecked() {
+            return $("#file-table input:checkbox:checked").map(function () {
+                return parseInt($(this).attr("value"));
+            }).get();
+        }
+
+        function downloadImages() {
+            $("#downloadImage").on("click", function() {
+                var formData = new FormData($('form')[0]);
+                $.ajax({
+                    url: 'http://localhost:8080/images/download',
+                    type: 'POST',
+                    enctype: 'multipart/form-data',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('User-Id', localStorage.getItem('user_id'));
+                    },
+                    data:JSON.stringify({"filesId": getChecked() , "downloadAll":true}),
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        console.log('download success!!')
+                        console.log(JSON.stringify(data));
+                    },
+                    error: function (jqXHR, exception) {
+                        console.log('download error!!')
+                    }
+                });
+            })
+        }
+
+        $(document).ready(function() {
+            loadImages();
+            uploadImages();
+            downloadImages()
         })
     </script>
 
