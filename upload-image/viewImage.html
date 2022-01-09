@@ -29,11 +29,12 @@
 
     <script>
         function loadImages() {
-            
             $.ajax({
                 url: 'http://localhost:8080/images',
                 type: 'GET',
-                headers: {"User-Id": localStorage.getItem('user_id')},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('User-Id', localStorage.getItem('user_id'));
+                },
                 success: function() { console.log('Success!'); }
             }).done(function(result) {
                console.log(result);
